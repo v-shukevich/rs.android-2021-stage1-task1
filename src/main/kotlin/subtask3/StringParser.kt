@@ -5,12 +5,13 @@ class StringParser {
     // TODO: Complete the following function
     fun getResult(inputString: String): Array<String> {
         var i = 0
+        var count = 0
         var resultArray = emptyArray<String>()
 
         while (i < inputString.length) {
             when (inputString[i]) {
                 '<' -> {
-                    var count = 0
+                     count = 0
                     loop@ for (index in i + 1 until inputString.length) {
                         when (inputString[index]) {
                             '<' -> count++
@@ -22,7 +23,7 @@ class StringParser {
                     }
                 }
                 '[' -> {
-                    var count = 0
+                    count = 0
                     loop@ for (index in i + 1 until inputString.length) {
                         when (inputString[index]) {
                             '[' -> count++
@@ -34,7 +35,7 @@ class StringParser {
                     }
                 }
                 '(' -> {
-                    var count = 0
+                    count = 0
                     loop@ for (index in i + 1 until inputString.length) {
                         when (inputString[index]) {
                             '(' -> count++
